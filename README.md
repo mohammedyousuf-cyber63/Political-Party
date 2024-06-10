@@ -39,6 +39,7 @@ It has an event planned for the party where people are made aware of the party's
 ## Screenshots
 
 ![screenshot](https://github.com/mohammedyousuf-cyber63/Political-Party/blob/master/Screenshot%20(58).png)
+![screenshot](https://github.com/mohammedyousuf-cyber63/Political-Party/blob/master/Screenshot%20(59).png)
 ![screenshot](
 ## Credits 
 
