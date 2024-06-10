@@ -1,4 +1,4 @@
-L2T23
+Political Party
 
 ## Project description
 
@@ -29,11 +29,18 @@ It has an event planned for the party where people are made aware of the party's
 ## Usage 
 
 1. Start the server:
+   
   npm start
    
-2. Open the project in the browser
-   http
+3. Open the project in the browser
+
+   https://localhost.3000
+   
+## Screenshots
+
 
 ## Credits 
 
-   
+Author: Mohammed Ferdous Yousuf
+
+
