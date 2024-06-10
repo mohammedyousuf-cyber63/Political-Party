@@ -19,15 +19,18 @@ It has an event planned for the party where people are made aware of the party's
 
 1. Clone the repository:
    '''bash
+   
    git clone
    https://github.com/yourusername/projectname.git
    '''
 3. Navigate to project directory:
-   '''bash 
+   '''bash
+   
    cd projectname
    '''
 5. Install dependencies:
    '''bash
+   
    npm install
    '''
 
