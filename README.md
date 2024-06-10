@@ -38,7 +38,8 @@ It has an event planned for the party where people are made aware of the party's
    
 ## Screenshots
 
-(#Screenshot (60).png)
+![screenshot](https://github.com/mohammedyousuf-cyber63/Political-Party/blob/master/Screenshot%20(58).png)
+![screenshot](
 ## Credits 
 
 Author: Mohammed Ferdous Yousuf
