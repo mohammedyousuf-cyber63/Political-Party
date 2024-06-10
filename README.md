@@ -23,7 +23,7 @@ It has an event planned for the party where people are made aware of the party's
    https://github.com/yourusername/projectname.git
    '''
 3. Navigate to project directory:
-   '''bash
+   '''bash 
    cd projectname
    '''
 5. Install dependencies:
