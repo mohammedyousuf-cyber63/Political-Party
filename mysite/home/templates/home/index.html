@@ -1,0 +1,70 @@
+<!--html file index in home-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <!--head section below-->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Latest Questions</title>
+
+        <!--style section below-->
+        <style>
+            /* List item styling */
+            ul {
+                list-style-type: none;
+                padding: 0;
+            }
+            body{}
+            li {
+                margin-bottom: 10px;
+            }
+            
+            body { container
+                width: 80%;
+                margin: 0 auto; /* Center the container horizontally */
+                padding: 20px;
+                background-color: #dcf0f6;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            h1 {
+                color: #212F3C;
+            }
+            h2 {
+                font-size: 18px
+            }
+
+            /* Link styling */
+            a {
+                color: #21618C ;
+                text-decoration: none;
+                font-size: 125% 
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+
+    <!--body section below in a container with questions-->
+    <body>
+        <div class="container">
+        <h1>Questions : </h1>
+        {% if latest_question_list %}
+            <ul>
+            {% for question in latest_question_list %}
+                <li><a href="{% url 'home:detail' question.id %}">{{ question.question_text }}</a></li>
+                
+            {% endfor %}
+            <br>
+            <h2>copyright protected &copy;</h2>
+            </ul>
+            
+        {% else %}
+            <p>No polls are available.</p>
+        {% endif %}
+        </div>
+    </body>
+</html>

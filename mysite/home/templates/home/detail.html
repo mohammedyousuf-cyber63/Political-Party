@@ -1,0 +1,89 @@
+<!--html file below-->
+<!DOCTYPE html>
+<html lang="en">
+    <!--head section below-->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Survey Form</title>
+
+        <!--style section below-->
+        <style>
+            /* Form styling */
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f2f2f2;
+                font-size: 110%
+            }
+
+            form {
+                width: 400px;
+                margin: 0 auto;
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            fieldset {
+                border: none;
+                margin-bottom: 20px;
+            }
+
+            legend {
+                font-size: 12px;
+                font-weight: bold;
+                color: #2b43a2;
+                margin-bottom: 10px;
+            }
+
+            label {
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            input[type="radio"] {
+                margin-right: 15px;
+            }
+            h2 {
+                font-size: 15px
+            }
+
+            input[type="submit"] {
+                background-color: #007bff;
+                color: #fff;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 9px;
+                size: 6px
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+            input[type="submit"]:hover {
+                background-color: #0056b3;
+            }
+            
+        </style>
+    </head>
+    <!--body section below with choices to vote for-->
+    <body>
+        <form action="{% url 'home:vote' question.id %}" method="post">
+            {% csrf_token %}
+            <fieldset>
+                <legend><h1>{{ question.question_text }}</h1></legend>
+                {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+                {% for choice in question.choice_set.all %}
+                    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+                    <label for="choice{{forloop.counter}}">{{choice.choice_text}}</label><br>
+                {% endfor %}
+            </fieldset>
+        
+            <!--vote button-->
+            <input type="submit" id="vote" value="Vote" style="height:50px; width:100px" />
+            <br>
+            <h2>copyright protected &copy;</h2>
+        
+        </form>
+    </body>            
+</html>

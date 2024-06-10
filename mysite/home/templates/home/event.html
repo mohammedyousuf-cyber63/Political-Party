@@ -1,0 +1,117 @@
+<!--html file for event page-->
+<!DOCTYPE html>
+<html lang="en">
+    <!--head section below-->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Political Party Event</title>
+        
+        <!--stying below for the file-->
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+
+            header {
+                background-color: #CEF1F5;
+                color: #21618C;
+                text-align: center;
+                padding: 2px 0;
+            }
+
+            main {
+                max-width: 900px;
+                margin: 10px auto;
+                padding: 0 10px;
+            }
+
+            .event-details, .registration-form {
+                margin-bottom: 100px;
+                font-size: 18px
+            }
+
+            .registration-form label {
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            .registration-form input[type="text"],
+            .registration-form input[type="email"],
+            .registration-form input[type="number"],
+            .registration-form button {
+                width: 100%;
+                margin-bottom: 10px;
+                padding: 10px;
+                box-sizing: border-box;
+            }
+
+            .registration-form button {
+                background-color: #333;
+                color: #fff;
+                border: none;
+                cursor: pointer;
+            }
+
+            .registration-form button:hover {
+                background-color: #555;
+            }
+
+            footer {
+                background-color: #CEF1F5;
+                color: #333;
+                text-align: center;
+                padding: 15px 0;
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body> <!--body section below-->
+        <!--header section below with heading -->
+        <header>
+            <h1> BAM (Betternent Alliance Movement) 
+            </h1>    
+
+            <h2>Upcoming Political Party Event 
+            </h2>
+        </header>
+
+        <!--main section with information-->
+        <main>
+            <div class="event-details">
+                <h2>Event Details</h2>
+                <p>Date: June 15, 2024</p>
+                <p>Time: 7:00 PM - 6:00 PM</p>
+                <p>Location: Soccer City Stadium, Johannesburg</p>
+                <p>Description: Join us for an evening of discussion and networking with fellow party members.</p>
+            </div>
+            <div class="registration-form">
+                <h2>Register for the Event</h2>
+
+                <!--input section below in a form-->
+                <form action="/register/" method="post">
+                    <!-- Add form fields for registration -->
+                    {% csrf_token %}
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required><br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required><br>
+                    <label for="name">Contact number:</label>
+                    <input type="number" id="number" name="number" required><br>
+                    <br>
+                    <!-- button to register-->
+                    <button type="submit">Register</button>
+                </form>
+            </div>
+        </main>
+
+        <footer> <!--footer with details to contact-->
+            <p>Contact us at bam_party@gmail.com for any inquiries.</p>
+            <h5>copyright protected &copy;</h5>
+        </footer>
+    </body>
+</html>

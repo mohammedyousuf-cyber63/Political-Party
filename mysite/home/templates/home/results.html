@@ -1,0 +1,75 @@
+<!--html file below with voting results-->
+<!DOCTYPE html>
+<html lang="en">
+    <!--head section below-->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Survey Results</title>
+
+        <!--styling below-->
+        <style>
+            /* Styling for the question */
+            h1 {
+                font-size: 24px;
+                font-weight: bold;
+                color: #333;
+                margin-bottom: 20px;
+            }
+
+            /* Styling for the choices */
+            ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            li {
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+
+            /* Styling for the "Vote again?" link */
+            a {
+                display: button;
+                font-size: 18px;
+                color: #007bff;
+                text-decoration: none;
+                margin-top: 25px;
+            }
+            body { container
+                width: 80%;
+                margin: 0 auto; /* Center the container horizontally */
+                padding: 20px;
+                background-color: #dcf0f6;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            h2 {
+                font-size: 12px
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+
+    <!--body section below for votes after addition to display-->
+    <body>
+        <div class="container">
+            <h1>{{ question.question_text }}</h1>
+
+            <ul>
+            {% for choice in question.choice_set.all %}
+                <li>{{ choice.choice_text }} ---> {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+            {% endfor %}
+            </ul>
+
+            <!--vote again link to click-->
+            <a href="{% url 'home:detail' question.id %}">Vote again?</a>
+            <br>
+            <h2>copyright protected &copy;</h2>
+        </div>
+    </body>
+</html>
